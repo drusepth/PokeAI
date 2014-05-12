@@ -4,7 +4,7 @@ $(document).ready(function () {
   queue_for_battle();
  
   function logic() {  
-	  // Treat each turn as its own state because yolo
+    // Treat each turn as its own state because yolo
     var active_moves  = get_active_moves(),
         move_types    = get_active_move_types(),
         enemy_pokemon = get_enemy_active_name();

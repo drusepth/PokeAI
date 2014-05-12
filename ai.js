@@ -65,6 +65,26 @@ $(document).ready(function () {
     
   }
   
+  // Create an event to continuously watch for the end of battles
+  // and queue up new ones afterwards
+  setInterval(function () {
+    // If the battle is over...
+    if ($('.messagebar.message').text().split(' ').slice(2, 4).join(' ') == 'the battle!') {
+      console.log('detected end of battle');
+      
+      // Say GG
+      send_chat_message('gg');
+      
+      // Close this match's window
+      if ($('.closebutton').length > 0) {
+        $('.closebutton')[0].click();
+      }
+      
+      // And queue up again in 5 seconds
+      setTimeout(function () { queue_for_battle(); }, 5000);
+    }
+  }, 10000);
+  
   // Register our AI to be called every turn
   register_ai(logic);
 });

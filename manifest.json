@@ -18,6 +18,7 @@
         "moves.js",
         "pokedex.js", 
         "interface.js", 
+        "bot.js",
         "ai.js"
       ]
 	}

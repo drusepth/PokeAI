@@ -37,10 +37,14 @@ function set_team(team_name) {
 	.click();
 }
 
-function queue_for_battle() {
+function queue_for_match() {
   console.log('Queuing for battle');
 
   $('.big.button').click();
+}
+
+function not_in_match() {
+  return $('.button.closable').length < 1;
 }
 
 function register_ai(logic_function) {
@@ -180,4 +184,8 @@ function switch_to_pokemon(pokemon_name) {
     .find('button')
     .filter(function (i) { return $(this).text().trim() == pokemon_name.trim(); })
     .click();
+}
+
+function match_is_over() {
+  return $('.messagebar.message').text().split(' ').slice(2, 4).join(' ') == 'the battle!';
 }

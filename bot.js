@@ -57,7 +57,7 @@ function PokemonBot() {
       var match_watcher = setInterval(function () {
         if ((not_in_match() || match_is_over()) && !currently_queueing() && matches_left > 0) {
           console.log(matches_left + ' matches left to play');
-          //send_chat_message('gg');
+          send_chat_message('gg');
           
           // Close the last match's window
           if ($('.closebutton').length > 0)

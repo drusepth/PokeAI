@@ -80,6 +80,8 @@ function get_nth_move_type(n) {
 }
 
 function use_move(move_name) {
+  if (typeof move_name != "string") return;
+
   console.log('Using move: [' + move_name.trim() + ']');
 
   $('.movemenu')

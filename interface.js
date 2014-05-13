@@ -187,5 +187,9 @@ function switch_to_pokemon(pokemon_name) {
 }
 
 function match_is_over() {
-  return $('.messagebar.message').text().split(' ').slice(2, 4).join(' ') == 'the battle!';
+  return $('.messagebar.message').text().split(' ').slice(-2).join(' ') == 'the battle!';
+}
+
+function currently_queueing() { 
+  return $('.big.button').hasClass('disabled');
 }

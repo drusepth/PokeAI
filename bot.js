@@ -55,12 +55,13 @@ function PokemonBot() {
       // Queue up X matches
       var matches_left = amount;
       var match_watcher = setInterval(function () {
-        if ((not_in_match() || match_is_over()) && matches_left > 0) {
+        if ((not_in_match() || match_is_over()) && !currently_queueing() && matches_left > 0) {
           console.log(matches_left + ' matches left to play');
           //send_chat_message('gg');
           
           // Close the last match's window
-          $('.closebutton').click();
+          if ($('.closebutton').length > 0)
+            $('.closebutton')[0].click();
           
           // And queue up again in 5 seconds
           setTimeout(function () { queue_for_match(); }, 5000);
@@ -68,7 +69,7 @@ function PokemonBot() {
           // And decrement the number of matches left to play
           matches_left--;
         }
-      }, 10000);
+      }, 20000);
     }
     
   };

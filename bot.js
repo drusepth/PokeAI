@@ -95,5 +95,21 @@ function PokemonBot() {
     }, 5000),
   };
   
+  // And create some global events to keep the bot moving forward
+  
+  // If an opponent leaves without resigning, click the 'Claim Victory' button
+  setInterval(function () {
+    if ($('.controls').text().split(' ').slice(0, 2).join(' ') == 'Claim victory') {
+      $('.controls > .timer > button').click();
+    }
+  }, 20000);
+  
+  // If the timer is not running in a match, start it (to prevent afk walling)
+  setInterval(function () {
+    if ($('.controls > .timer > button').text() == 'Start timer') {
+      $('.controls > .timer > button').click();
+    }
+  }, 30000);
+  
   return bot;
 }

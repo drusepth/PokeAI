@@ -5,7 +5,7 @@ $(document).ready(function () {
   bot.logic.switch.unshift(function () { shift_select_logic(); });
   bot.logic.turn.unshift(function () { move_selection_logic(); });
   
-  bot.queue_matches('OU', '[OU] Ankov 1.1', 100); // woohoo!
+  bot.queue_matches('OU', '[OU] Ankov T1-Assault', 100); // woohoo!
  
   // Rank each of our moves by effectiveness * power * accuracy and use the move with the
   // highest score

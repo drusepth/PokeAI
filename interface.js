@@ -163,7 +163,7 @@ function get_types(pokemon_name) {
 function get_move_rating(move_name) {
   var move_info = get_move_info(move_name);
   if (move_info)
-    return (1.0 * move_info.basePower) * (1.0 * move_info.accuracy);
+    return (1.25 * move_info.basePower) * (1.0 * move_info.accuracy);
 
   return 0;
 }
